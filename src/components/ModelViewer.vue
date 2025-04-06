@@ -84,14 +84,5 @@ export default defineComponent({
                 </ul>
             </div>
         </div>
-
-        <!-- Survey instructions -->
-        <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
-            <h3 class="font-medium text-blue-800">Instructions</h3>
-            <p class="text-blue-700">
-                Please examine this model carefully, then return to the
-                Microsoft Forms survey to answer questions about it.
-            </p>
-        </div>
     </div>
 </template>
