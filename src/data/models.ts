@@ -1,31 +1,41 @@
 // src/data/models.ts
 
-import RedTreeL from '../assets/3d-models/lumaai/red_tree_l.glb'; // Example model, replace with your actual model
-import TreasureChestL from '../assets/3d-models/lumaai/treasure_chest_l.glb'; // Example model, replace with your actual model
+import RedTreeL1 from '../assets/3d-models/lumaai/red_tree-l1.glb';
+import TreasureChestL1 from '../assets/3d-models/lumaai/treasure_chest-l1.glb';
+import MysticScrollL1 from '../assets/3d-models/lumaai/mystic_scroll-l1.glb';
 
-import RedTreeH from '../assets/3d-models/hunyuan3d/red_tree.glb'; // Example model, replace with your actual model
-import BlueGemH from '../assets/3d-models/hunyuan3d/blue_gem.glb'; // Example model, replace with your actual model
-import FruitBasketH from '../assets/3d-models/hunyuan3d/fruit_basket.glb'; // Example model, replace with your actual model
-import TreasureChestH from '../assets/3d-models/hunyuan3d/treasure_chest.glb'; // Example model, replace with your actual model
+import RedTreeL2 from '../assets/3d-models/lumaai/red_tree-l2.glb';
+import TreasureChestL2 from '../assets/3d-models/lumaai/treasure_chest-l2.glb';
+import MysticScrollL2 from '../assets/3d-models/lumaai/mystic_scroll-l2.glb';
+
+import RedTreeH from '../assets/3d-models/hunyuan3d/red_tree.glb';
+import TreasureChestH from '../assets/3d-models/hunyuan3d/treasure_chest.glb';
+import MysticScrollH from '../assets/3d-models/hunyuan3d/mystic_scroll.glb';
 
 interface ModelData {
     [key: number]: string;
 }
 
 export const modelUrls: ModelData = {
-    1: RedTreeL,
-    2: TreasureChestL,
-    3: RedTreeH,
-    4: TreasureChestH,
-    5: FruitBasketH,
-    6: BlueGemH,
+    1: RedTreeL1,
+    2: TreasureChestL1,
+    3: MysticScrollL1,
+    4: RedTreeL2,
+    5: TreasureChestL2,
+    6: MysticScrollL2,
+    7: RedTreeH,
+    8: TreasureChestH,
+    9: MysticScrollH,
 };
 
 export const modelDescriptions: Record<number, string> = {
     1: 'A red fantasy tree with twisted roots',
     2: 'A treasure chest filled with gold coins',
-    3: 'A red fantasy tree with twisted roots',
-    4: 'A treasure chest filled with gold coins',
-    5: 'A fruit basket filled with various fruits',
-    6: 'A blue sapphire spiral gem',
+    3: 'A mystic parchment scroll',
+    4: 'A red fantasy tree with twisted roots',
+    5: 'A treasure chest filled with gold coins',
+    6: 'A mystic parchment scroll',
+    7: 'A red fantasy tree with twisted roots',
+    8: 'A treasure chest filled with gold coins',
+    9: 'A mystic parchment scroll',
 };
