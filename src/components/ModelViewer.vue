@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
-import { modelUrls } from '../data/models';
+import { treeUrls } from '../data/models';
 
 export default defineComponent({
     name: 'ModelViewer',
@@ -11,8 +11,8 @@ export default defineComponent({
 
         const currentModelUrl = computed(() => {
             return (
-                modelUrls[currentModelIndex.value as keyof typeof modelUrls] ||
-                modelUrls[1]
+                treeUrls[currentModelIndex.value as keyof typeof treeUrls] ||
+                treeUrls[1]
             );
         });
 
@@ -24,7 +24,7 @@ export default defineComponent({
             currentModelIndex,
             currentModelUrl,
             selectModel,
-            modelUrls,
+            treeUrls,
         };
     },
 });
@@ -36,7 +36,7 @@ export default defineComponent({
         <nav class="bg-gray-800 text-white p-4 mb-6 rounded-lg">
             <div class="flex flex-wrap items-center justify-center">
                 <button
-                    v-for="index in Object.keys(modelUrls).length"
+                    v-for="index in Object.keys(treeUrls).length"
                     :key="index"
                     @click="selectModel(index)"
                     class="px-3 py-2 mx-1 my-1 rounded-md transition-colors"

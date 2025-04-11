@@ -13,7 +13,7 @@
             </div>
         </header>
 
-        <ModelViewer />
+        <ModelComp />
 
         <footer
             class="container mx-auto mt-12 text-center text-gray-500 text-sm"
@@ -30,11 +30,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import ModelViewer from './components/ModelViewer.vue';
+import ModelComp from './components/ModelComp.vue';
 
 export default defineComponent({
     name: 'App',
     components: {
         ModelViewer,
+        ModelComp,
     },
 });
 </script>
