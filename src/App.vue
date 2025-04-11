@@ -1,19 +1,40 @@
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+    name: 'App',
+});
+</script>
+
 <template>
     <div class="min-h-screen py-8 max-w-screen-xl">
         <header class="container mx-auto mb-8 text-center">
             <h1 class="text-3xl font-bold text-gray-800">3D Model Viewer</h1>
 
-            <!-- Survey instructions -->
-            <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-500 rounded">
-                <h3 class="font-medium text-blue-800">Instructions</h3>
-                <p class="text-blue-700">
-                    Please examine this model carefully, then return to the
-                    Microsoft Forms survey to fill in the evaluation.
-                </p>
-            </div>
+            <!-- Navigation -->
+            <nav class="mt-6 flex justify-center space-x-4">
+                <router-link
+                    to="/"
+                    class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
+                >
+                    Home
+                </router-link>
+                <router-link
+                    to="/inspect"
+                    class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
+                >
+                    Model Inspection
+                </router-link>
+                <router-link
+                    to="/comparison"
+                    class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
+                >
+                    Model Comparison
+                </router-link>
+            </nav>
         </header>
 
-        <ModelComp />
+        <router-view />
 
         <footer
             class="container mx-auto mt-12 text-center text-gray-500 text-sm"
@@ -26,17 +47,3 @@
         </footer>
     </div>
 </template>
-
-<script lang="ts">
-import { defineComponent } from 'vue';
-import ModelViewer from './components/ModelViewer.vue';
-import ModelComp from './components/ModelComp.vue';
-
-export default defineComponent({
-    name: 'App',
-    components: {
-        ModelViewer,
-        ModelComp,
-    },
-});
-</script>

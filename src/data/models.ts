@@ -20,29 +20,11 @@ import RedTreeH from '../assets/3d-models/hunyuan3d/red_tree.glb';
 import TreasureChestH from '../assets/3d-models/hunyuan3d/treasure_chest.glb';
 import MysticScrollH from '../assets/3d-models/hunyuan3d/mystic_scroll.glb';
 
-interface ModelData {
+export interface ModelData {
     [key: number]: string;
 }
 
-export const modelUrls: ModelData = {
-    1: RedTreeL1,
-    2: TreasureChestL1,
-    3: MysticScrollL1,
-    4: RedTreeL2,
-    5: TreasureChestL2,
-    6: MysticScrollL2,
-    7: RedTreeH1,
-    8: TreasureChestH1,
-    9: MysticScrollH1,
-    10: RedTreeH2,
-    11: TreasureChestH2,
-    12: MysticScrollH2,
-    13: RedTreeH,
-    14: TreasureChestH,
-    15: MysticScrollH,
-};
-
-export const treeUrls: ModelData = {
+export const trees: ModelData = {
     1: RedTreeL1,
     2: RedTreeL2,
     3: RedTreeH1,
@@ -50,8 +32,24 @@ export const treeUrls: ModelData = {
     5: RedTreeH,
 };
 
-export const modelDescriptions: Record<number, string> = {
-    1: 'A red fantasy tree with twisted roots',
-    2: 'A treasure chest filled with gold coins',
-    3: 'A mystic parchment scroll',
+export const chests: ModelData = {
+    1: TreasureChestL1,
+    2: TreasureChestL2,
+    3: TreasureChestH1,
+    4: TreasureChestH2,
+    5: TreasureChestH,
+};
+
+export const scrolls: ModelData = {
+    1: MysticScrollL1,
+    2: MysticScrollL2,
+    3: MysticScrollH1,
+    4: MysticScrollH2,
+    5: MysticScrollH,
+};
+
+export const modelDescriptions: Record<string, string> = {
+    tree: 'Red Tree',
+    chest: 'Chest',
+    scroll: 'Scroll',
 };

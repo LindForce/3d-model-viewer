@@ -1,33 +1,52 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
-import { modelUrls, modelDescriptions } from '../data/models';
+import { modelDescriptions, trees, chests, scrolls } from '../data/models';
 
 export default defineComponent({
     name: 'ModelComp',
     setup() {
-        const categories = ['Tree', 'Treasure Chest', 'Mystic Scroll'];
-        const activeTab = ref('Tree');
+        const categories = [
+            'Red Twisted Tree',
+            'Gem-Studded Treasure Chest',
+            'Ornate Parchment Scroll',
+        ];
+
+        const activeTab = ref('Red Twisted Tree');
 
         const getModelIdsForTab = (tab: string) => {
             switch (tab) {
-                case 'Tree':
-                    return [1, 4, 7, 10, 13]; // all tree models
-                case 'Treasure Chest':
-                    return [2, 5, 8, 11, 14];
-                case 'Mystic Scroll':
-                    return [3, 6, 9, 12, 15];
+                case 'Red Twisted Tree':
+                    return trees; // all tree models
+                case 'Gem-Studded Treasure Chest':
+                    return chests;
+                case 'Ornate Parchment Scroll':
+                    return scrolls;
                 default:
                     return [];
             }
         };
 
         const currentModels = computed(() => {
-            return getModelIdsForTab(activeTab.value).map((id) => ({
+            const models = getModelIdsForTab(activeTab.value);
+            return Object.entries(models).map(([id, url]) => ({
                 id,
-                url: modelUrls[id],
-                description: modelDescriptions[id],
+                url,
+                description: modelDescriptions[getCategoryKey(activeTab.value)],
             }));
         });
+
+        const getCategoryKey = (tab: string) => {
+            switch (tab) {
+                case 'Red Twisted Tree':
+                    return 'tree';
+                case 'Gem-Studded Treasure Chest':
+                    return 'chest';
+                case 'Ornate Parchment Scroll':
+                    return 'scroll';
+                default:
+                    return '';
+            }
+        };
 
         return {
             activeTab,
@@ -64,7 +83,7 @@ export default defineComponent({
                 class="bg-white p-4 rounded-lg border shadow"
             >
                 <h3 class="text-center font-medium mb-2">
-                    Model {{ model.id }}
+                    {{ model.description }} {{ model.id }}
                 </h3>
                 <div
                     class="aspect-video w-full bg-gray-100 border rounded mb-3"
