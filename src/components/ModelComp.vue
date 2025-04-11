@@ -48,10 +48,32 @@ export default defineComponent({
             }
         };
 
+        const transformToRomanNumbers = (number: number) => {
+            const romanNumerals = [
+                'I',
+                'II',
+                'III',
+                'IV',
+                'V',
+                'VI',
+                'VII',
+                'VIII',
+                'IX',
+                'X',
+            ];
+            if (number < 1 || number > romanNumerals.length) {
+                console.error('Number out of range for Roman numerals');
+                return '';
+            }
+
+            return romanNumerals[number - 1];
+        };
+
         return {
             activeTab,
             categories,
             currentModels,
+            transformToRomanNumbers,
         };
     },
 });
@@ -83,7 +105,8 @@ export default defineComponent({
                 class="bg-white p-4 rounded-lg border shadow min-w-80"
             >
                 <h3 class="text-center font-medium mb-2">
-                    {{ model.description }} {{ model.id }}
+                    {{ model.description }}
+                    {{ transformToRomanNumbers(Number(model.id)) }}
                 </h3>
                 <div
                     class="aspect-video w-full bg-gray-100 border rounded mb-3"
