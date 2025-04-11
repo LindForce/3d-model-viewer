@@ -1,6 +1,7 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
 import { trees } from '../data/models';
+import '../styles/ModelViewer.css';
 
 export default defineComponent({
     name: 'ModelViewer',
@@ -30,9 +31,9 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="container mx-auto p-4">
+    <div class="mx-auto p-4 w-full">
         <!-- Navigation bar -->
-        <nav class="bg-gray-800 text-white p-4 mb-6 rounded-lg">
+        <nav class="bg-gray-800 text-white p-4 mb-6 rounded-lg w-full">
             <div class="flex flex-wrap items-center justify-center">
                 <button
                     v-for="index in Object.keys(trees).length"
@@ -51,7 +52,7 @@ export default defineComponent({
         </nav>
 
         <!-- Model viewer section -->
-        <div class="bg-gray-100 p-6 rounded-lg">
+        <div class="bg-gray-100 p-6 rounded-lg modelViewer">
             <h2 class="text-xl font-semibold mb-4 text-center">
                 Model {{ currentModelIndex }}
             </h2>

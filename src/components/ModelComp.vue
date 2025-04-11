@@ -58,9 +58,9 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="container mx-auto p-4">
+    <div class="mx-auto p-4 w-full">
         <!-- Tabs -->
-        <nav class="flex justify-center mb-6 space-x-4">
+        <nav class="flex justify-center mb-6 space-x-4 w-full">
             <button
                 v-for="category in categories"
                 :key="category"
@@ -80,7 +80,7 @@ export default defineComponent({
             <div
                 v-for="model in currentModels"
                 :key="model.id"
-                class="bg-white p-4 rounded-lg border shadow"
+                class="bg-white p-4 rounded-lg border shadow min-w-80"
             >
                 <h3 class="text-center font-medium mb-2">
                     {{ model.description }} {{ model.id }}

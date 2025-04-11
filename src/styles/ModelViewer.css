@@ -1,0 +1,10 @@
+.modelViewer {
+    min-width: 500px;
+}
+
+@media screen and (min-width: 1000px) {
+    .modelViewer {
+        min-width: 800px;
+    }
+    
+}

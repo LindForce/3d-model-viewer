@@ -7,8 +7,8 @@ export default defineComponent({
 </script>
 
 <template>
-    <div class="min-h-screen py-8 max-w-screen-xl">
-        <header class="container mx-auto mb-8 text-center">
+    <div class="min-h-screen py-8">
+        <header class="mx-auto mb-8 text-center">
             <h1 class="text-3xl font-bold text-gray-800">3D Model Viewer</h1>
 
             <!-- Navigation -->
@@ -23,13 +23,13 @@ export default defineComponent({
                     to="/inspect"
                     class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
                 >
-                    Model Inspection
+                    Part 1
                 </router-link>
                 <router-link
                     to="/comparison"
                     class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded"
                 >
-                    Model Comparison
+                    Part 2
                 </router-link>
             </nav>
         </header>
