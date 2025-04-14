@@ -16,7 +16,7 @@ export default defineComponent({
         },
     },
     emits: ['close'],
-    setup(props, { emit }) {
+    setup(_props, { emit }) {
         const closeModal = () => {
             emit('close');
         };
