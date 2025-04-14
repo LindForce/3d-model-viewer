@@ -6,5 +6,8 @@
     .modelViewer {
         min-width: 800px;
     }
-    
+}
+
+.comparisonModel {
+    min-width: 350px;
 }
