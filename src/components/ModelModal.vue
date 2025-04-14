@@ -1,13 +1,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import type { PropType } from 'vue';
-
-interface ModelDisplay {
-    id: string;
-    url: string;
-    description: string;
-    romanId: string;
-}
+import type { ModelDisplay } from '../data/models';
 
 export default defineComponent({
     name: 'ModelModal',

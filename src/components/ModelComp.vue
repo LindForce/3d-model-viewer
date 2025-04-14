@@ -1,15 +1,8 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue';
 import { modelDescriptions, trees, chests, scrolls } from '../data/models';
-import type { ModelData } from '../data/models';
+import type { ModelData, ModelDisplay } from '../data/models';
 import ModelModal from './ModelModal.vue';
-
-interface ModelDisplay {
-    id: string;
-    url: string;
-    description: string;
-    romanId: string;
-}
 
 export default defineComponent({
     name: 'ModelComp',

@@ -24,6 +24,13 @@ export interface ModelData {
     [key: number]: string;
 }
 
+export interface ModelDisplay {
+    id: string;
+    url: string;
+    description: string;
+    romanId: string;
+}
+
 export const trees: ModelData = {
     1: RedTreeL1,
     2: RedTreeL2,
